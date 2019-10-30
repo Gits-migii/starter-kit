@@ -1,0 +1,39 @@
+/*
+**
+** サポートクラス
+** あまり使わないのが理想
+** 
+*/
+
+
+//- マージン・パディング微調整用サポートクラス
+//- s-mt4,8,12みたいな感じで100まで生成されます。
+
+@for $i from 1 through 25 {
+
+  .s-mt#{$i * 4} {
+    margin-top: 4px * $i !important;
+  }
+  .s-mr#{$i * 4} {
+    margin-right: 4px * $i !important;
+  }
+  .s-mb#{$i * 4} {
+    margin-bottom: 4px * $i !important;
+  }
+  .s-ml#{$i * 4} {
+    margin-left: 4px * $i !important;
+  }
+
+  .s-pt#{$i * 4} {
+    padding-top: 4px * $i !important;
+  }
+  .s-pr#{$i * 4} {
+    padding-right: 4px * $i !important;
+  }
+  .s-pb#{$i * 4} {
+    padding-bottom: 4px * $i !important;
+  }
+  .s-pl#{$i * 4} {
+    padding-left: 4px * $i !important;
+  }  
+}

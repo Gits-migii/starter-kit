@@ -1,0 +1,15 @@
+/*
+**
+** 憎き印刷用プロパティ
+**
+*/
+
+@media print {
+
+  // A4サイズに当て込む
+  html {
+    margin: auto !important;
+    height:297mm;
+    width:210mm;    
+  }  
+}

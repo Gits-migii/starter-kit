@@ -1,0 +1,9 @@
+mixin linklist(href,txt)
+  li
+    a(href=href)
+      p!=txt
+
+ul
+  +linklist('#','Nav')
+  +linklist('#','Nav02')
+  +linklist('#','Nav03')

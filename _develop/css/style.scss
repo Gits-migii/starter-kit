@@ -1,0 +1,42 @@
+
+/*
+**
+** sass-globにてまとめてimportしてます。
+**　Foundationのみ順序を守るべく個別で指定
+**
+*/
+
+@import "./_Foundation/_variable";
+@import "./_Foundation/_mixin";
+@import "./_Foundation/_keyframes";
+@import "./_Foundation/_base";
+@import "./_Foundation/_layout";
+
+@import "./_Unique/**";
+@import "./_Components/**";
+@import "./_Kits/**";
+
+
+// サンプル
+
+.sample-container {
+  transition: .3s ease background;
+  &.is-black {
+    background: #000;
+
+    header > h1 {
+      color: #fff;
+    }
+
+    ul > li > a {
+      color: #fff;
+    }
+
+    address {
+      color: #fff;
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

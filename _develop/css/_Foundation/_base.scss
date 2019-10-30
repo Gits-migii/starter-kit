@@ -1,0 +1,36 @@
+/*
+**
+** init reset系もこちらで指定。
+**
+*/
+
+
+//- ALL Init
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+
+//- IE用にHTML5属性をblockに
+main,article,aside,section,picture,header,footer {
+  display: block;
+}
+
+
+
+//- Margin,Padding Reset
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+ol,li,ul,li {
+  list-style: none;
+  list-style-type: none;
+}

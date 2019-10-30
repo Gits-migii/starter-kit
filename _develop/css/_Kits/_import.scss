@@ -1,0 +1,11 @@
+/*
+**
+** node_modulesからimportを行うときにつかう
+** @import '~xxx/xxxx/xxxx.scss'
+**
+*/
+
+@import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+
+//- slick fontを設置していないので、slick使用時consoleにerrorが出ます

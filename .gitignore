@@ -1,0 +1,4 @@
+node_modules
+_preview/**/*.html
+_preview/**/*.css
+_preview/**/*.js

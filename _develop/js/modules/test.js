@@ -4,14 +4,15 @@ import $ from 'jquery'
 
 
 export default class test {
-  constructor () {
+  constructor() {
     this.BindEvent()
   }
 
-  BindEvent () {
+  BindEvent() {
     //3秒後にクラスを付与するだけ
-    setTimeout(()=>{
+    setTimeout(() => {
       $('.sample-container').addClass('is-black')
-    },3000);    
+      alert("hoge")
+    }, 3000);
   }
 }

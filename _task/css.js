@@ -18,11 +18,11 @@ class compileTask extends DefaultRegistry {
   init() {
     gulp.task('sass', cb => {
       console.log('sass compile!');
-      return gulp.src('./_develop/**/*.scss')
+      return gulp.src('./src/style/**/*.scss')
         .pipe(plumber({}))
         .pipe(glob())
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-        .pipe(gulp.dest('./_preview/assets/'))
+        .pipe(gulp.dest('./html/assets/'))
       cb();
     });
 
@@ -33,12 +33,12 @@ class compileTask extends DefaultRegistry {
           browsers: AUTOPREFIXER_BROWSERS
         })
       ];
-      return gulp.src('./_develop/**/*.scss')
+      return gulp.src('./src/style/**/*.scss')
         .pipe(plumber({}))
         .pipe(glob())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./htdocs/'))
+        .pipe(gulp.dest('./dist/assets/'))
       cb();
     });
   }

@@ -9,14 +9,15 @@ import webpackdevConfig from '../webpack.dev.js';
 import webpackprodConfig from '../webpack.prod.js';
 
 
+
 class compileTask extends DefaultRegistry {
   init() {
     gulp.task('babel', cb => {
       return plumber({
         errorHandler: notify.onError('<%= error.message %>'),
       })
-      .pipe(webpackStream(webpackdevConfig, webpack))
-      .pipe(gulp.dest('./'))
+        .pipe(webpackStream(webpackdevConfig, webpack))
+        .pipe(gulp.dest('./_preview/assets/'))
       cb();
     });
 
@@ -25,11 +26,11 @@ class compileTask extends DefaultRegistry {
       return plumber({
         errorHandler: notify.onError('<%= error.message %>'),
       })
-      .pipe(webpackStream(webpackprodConfig, webpack))
-      .pipe(uglify({}))
-      .pipe(gulp.dest('./'))
+        .pipe(webpackStream(webpackprodConfig, webpack))
+        .pipe(uglify({}))
+        .pipe(gulp.dest('./'))
       cb();
-    });    
+    });
 
   }
 

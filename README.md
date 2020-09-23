@@ -1,4 +1,4 @@
-![Migii](https://github.com/Gits-migii/starter-kit/dist/assets/images/icons/icon-512x512.png)
+![Migii](https://raw.githubusercontent.com/Gits-migii/starter-kit/master/dist/assets/images/icons/icon-512x512.png)
 
 # 開発環境何度も作るのめんどくさい人向け
 本プロジェクトは表題の通り時間の無いときに新規案件振られたりした人向けの開発環境です。

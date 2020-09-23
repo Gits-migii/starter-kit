@@ -1,12 +1,12 @@
 {
-  "name": "Migii-Starter-Kit",
+  "name": "migii-starter-kit",
   "description": "Starter Kit",
   "repository": "https://github.com/Gits-migii/starter-kit",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "gulp",
-    "deploy": "gulp deploy && NODE_ENV=production webpack -p"
+    "build": "gulp deploy && NODE_ENV=production webpack -p"
   },
   "devDependencies": {
     "@babel/register": "^7.6.2",

@@ -15,7 +15,7 @@ html(lang="ja")
     meta(name='robots', content='follow')
     meta(name="description", content="description")
     meta("keywords", content="key,word,s")
-    link(rel="stylesheet", href="/assets/css/style.css")
+    link(rel="stylesheet", href="/assets/style/style.css")
     script(src="/assets/js/app.js")
   block uniqueFile
     title Starter Kit
@@ -23,7 +23,7 @@ html(lang="ja")
 
   body
     .sample-container
-      include /_pug/_layouts/_header
+      include /_layouts/_header
       main
           block contents
-      include  /_pug/_layouts/_footer.pug
+      include  /_layouts/_footer.pug

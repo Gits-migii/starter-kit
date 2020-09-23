@@ -1,17 +1,18 @@
+/**
+ * webpackはjsをビルドするためだけに使用。
+ * アウトプットは_task/babel.jsの方に記載されてる。
+ * 今のところvueの使用を許可
+ * @var srcDir === 開発ディレクトリを配列に入れて、回してる
+ */
+
 import path from 'path';
-
 const { VueLoaderPlugin } = require('vue-loader');
-
-
-const prev = __dirname + '/_preview'
-const dist = __dirname + '/htdocs';
 const glob = require('glob');
 
-const srcDir = "./_develop"
+const srcDir = "./src"
 const entries = {}
-const outPath = path.join(__dirname + '_preview')
 
-glob.sync("**/app.js", {
+glob.sync("**/*.js", {
   ignore: '**/_*.js',
   cwd: srcDir
 }).map(function (key) {
@@ -46,11 +47,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        // options: {
-        //   loaders: {
-        //     scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-        //   }
-        // }
       },
       {
         test: /\.scss$/,
@@ -60,9 +56,24 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              // CSS内のurl()メソッドの取り込みを禁止する
+              url: false,
+              // ソースマップの利用有無
+              sourceMap: true,
+              // Sass+PostCSSの場合は2を指定
+              importLoaders: 2
+            }
           },
           {
             loader: 'sass-loader',
+            options: {
+              // ソースマップの利用有無
+              sourceMap: true
+            },
+          },
+          {
+            loader: "import-glob-loader"
           },
         ]
       },
@@ -70,7 +81,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin()
-    // Other plugins...
 
   ],
   resolve: {

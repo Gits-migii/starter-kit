@@ -5,6 +5,9 @@ import postcss from 'gulp-postcss';
 import cssnext from 'postcss-cssnext';
 import plumber from 'gulp-plumber';
 import glob from 'gulp-sass-glob';
+import sourcemaps from 'gulp-sourcemaps';
+
+sass.compiler = require('node-sass');
 
 
 var AUTOPREFIXER_BROWSERS = [
@@ -21,8 +24,10 @@ class compileTask extends DefaultRegistry {
       return gulp.src('./src/style/**/*.scss')
         .pipe(plumber({}))
         .pipe(glob())
+        .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-        .pipe(gulp.dest('./html/assets/'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./_preview/assets/style/'))
       cb();
     });
 
@@ -38,7 +43,7 @@ class compileTask extends DefaultRegistry {
         .pipe(glob())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./dist/assets/'))
+        .pipe(gulp.dest('./dist/assets/style/'))
       cb();
     });
   }

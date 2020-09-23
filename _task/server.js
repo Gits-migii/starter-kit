@@ -5,13 +5,13 @@ class compileTask extends DefaultRegistry {
 	init() {
 		gulp.task('browserSync', cb => {
 			browserSync({
-	        server: {
-            baseDir: './_preview/',
-            directory: true,
-            open: 'external',
-	        }
-      });
-				cb();
+				server: {
+					baseDir: './_preview/',
+					directory: true,
+					open: 'external',
+				}
+			});
+			cb();
 		});
 	}
 }

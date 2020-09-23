@@ -7,7 +7,8 @@ import htmlTask from './_task/html'
 import watchTask from './_task/watch'
 import babelTask from './_task/babel'
 import serverTask from './_task/server'
-import cleanTask from './_task/clean'
+import copyTask from './_task/copy'
+// import cleanTask from './_task/clean'
 
 
 
@@ -17,14 +18,15 @@ gulp.registry(babelTask)
 gulp.registry(htmlTask)
 gulp.registry(watchTask)
 gulp.registry(serverTask)
-gulp.registry(cleanTask)
+gulp.registry(copyTask)
+// gulp.registry(cleanTask)
 
 
 
 
 
 gulp.task('default', gulp.series(
-  'clean_html',
+  // 'clean_html',
   'babel',
   'sass',
   'pug',
@@ -34,7 +36,8 @@ gulp.task('default', gulp.series(
 
 
 gulp.task('deploy', gulp.series(
-  'clean_build',
+  // 'clean_build',
+  'copy',
   'build_pug',
   'build_sass',
   'build_babel',

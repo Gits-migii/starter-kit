@@ -8,13 +8,13 @@ class compileTask extends DefaultRegistry {
   init() {
     gulp.task('pug', cb => {
       gulp.src(
-          ['./_develop/**/*.pug', '!./_develop/**/_*.pug']
-        )
-        .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        ['./src/html/**/*.pug', '!./src/html/**/_*.pug']
+      )
+        .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
 
         .pipe(pug({
           pretty: true,
-          basedir: './_develop/'
+          basedir: './src/html/'
         }))
 
         .pipe(gulp.dest('./_preview/'))
@@ -24,18 +24,18 @@ class compileTask extends DefaultRegistry {
 
     gulp.task('build_pug', cb => {
       gulp.src(
-          ['./_develop/**/*.pug', '!./_develop/**/_*.pug']
-        )
+        ['./src/html/**/*.pug', '!./src/html/**/_*.pug']
+      )
 
         .pipe(pug({
           pretty: true,
-          basedir: './_develop/'
+          basedir: './src/html/'
         }))
 
-        .pipe(gulp.dest('./htdocs/'))
+        .pipe(gulp.dest('./dist/'))
       cb();
       console.log('pug compile!');
-    });    
+    });
   }
 
 };

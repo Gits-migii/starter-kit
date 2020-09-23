@@ -11,7 +11,7 @@
 - Pug・SCSSをメタ言語として使用、JavaScriptはwebpackを使用しています。vueが使えるようになりました。　
 - src配下に画像は置く必要はありません。_previewディレクトリで配置し呼び出してください。
 - リポジトリの肥大化を防ぐめ、`_preview配下`の `HTML、CSS、JSなど` のソースコードはignoreとし、`当配下は画像` のみを管理します。
-- 差分を抽出するために、納品ファイルにあたる`htdocs`配下はignoreしていません。
+- yarn deployでdist配下にまるっとファイルが出来上がるのでそれを納品ファイルとすることが出来ます。
 - src/index.jsはwebpackを動作させるためだけに置いています。
 
 ## Usage
